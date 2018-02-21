@@ -2,11 +2,11 @@ __author__ = 'Trenton'
 import math, random, sys
 import pygame
 from pygame.locals import *
-
+# help from https://www.youtube.com/watch?v=Idu8XfwKUao
 # exit the program
 def events():
 	for event in pygame.event.get():
-		if event.type == QUIT or (event.type == KEYDOWN and event.key == K_ESCAPE):
+		if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
 			pygame.quit()
 			sys.exit()
 
@@ -26,14 +26,14 @@ FPS = 120
 BLACK = (0, 0, 0, 255)
 WHITE = (255, 255, 255, 255)
 
-obstacle = pygame.image.load("obstacle-400x399.png").convert_alpha()
+obstacle = pygame.image.load("Triforce.png").convert_alpha()
 obstacle_mask = pygame.mask.from_surface(obstacle)
 obstacle_rect = obstacle.get_rect()
 ox = HW - obstacle_rect.center[0]
 oy = HH - obstacle_rect.center[1]
 
-green_blob = pygame.image.load("greenblob-59x51.png").convert_alpha()
-orange_blob = pygame.image.load("orangeblob-59x51.png").convert_alpha()
+green_blob = pygame.image.load("Blue_Circle_full.png").convert_alpha()
+orange_blob = pygame.image.load("Red_Circle_full.png").convert_alpha()
 blob_mask = pygame.mask.from_surface(green_blob)
 blob_rect = green_blob.get_rect()
 blob_color = green_blob
